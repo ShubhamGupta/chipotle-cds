@@ -1,0 +1,77 @@
+<%# main container starts here %>
+
+  
+  <div id='theme_wrapper' class='container'>
+    <div id='mainBg'>
+      <div id='wrapper' class=''>
+        <div id="content" class=''>
+          <div id='team_page' class='container who_we'>  
+            <div class='span3 pull-left'>
+              <p class='whowe teams active'>WHO WE ARE</p>
+              <%= link_to 'WHO WE ARE', '#', :class => "whowe teams active" %>
+            </div>
+
+            <div class='span8 pull-right'>
+              <div class='top-section'>
+                For over twelve years, we've transformed the software dreams of big brands and start-ups into reality on computers, tablets, and smartphones.
+              </div>
+              <%= division :id => 'division1', :max_counts => 3 do %>
+                <div class="repeatable radius_4">
+                  <div class='mid-section'>
+                    <div class='span4 profileImg'>
+                      <div class='image_sec'>
+                        <%= display :image, :id => 'emp_image', :src => 'no-theme.png' %>
+                      </div>
+                    </div>
+                    <div class='span4 basicInfo ip_widthFix'>
+                      <div class='name'>
+                        <%= display :text_block, :contenteditable => "true", :id => 'emp_name' do %>
+                          Name of Member.
+                        <% end %>
+                      </div>
+                      <div class='title'>
+                        <%= display :text_block, :contenteditable => "true", :id => 'emp_desig' do %>
+                          Designation of Member.
+                        <% end %>
+                      </div>
+                      <div class='contactInfo'>
+                          <span class='head'>Twitter:</span>
+                          <span class='value'>
+                            <%= display :link, :text=>"Twitter link", :href=>'#',  :class=>"doc_link", :id => 'emp_twt' %>
+                          </span>
+                          <br/>
+
+                          <span class='head'>LinkedIn:</span>
+                          <span class='value'>
+                            <%= display :link, :text=>"LinkedIn link", :href=>'#', :class=>"doc_link", :id => 'emp_linked' %>
+                          </span>
+                          <br/>
+
+                          <span class='head'>Blog:</span>
+                          <span class='value'>
+                            <%= display :link, :text=>"Blog link", :href=>'#', :class=>"doc_link", :id => 'emp_blog' %>
+                          </span>
+
+                      </div>
+                    </div>
+                    <div class='details'>
+                      <p>
+                        <div class="text_block">
+                          <%= display :text_block, :contenteditable => "true", :id => 'emp_bio' do %>
+                            Bio data of Member To be inserted here.
+
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                          <% end %>
+                        </div>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

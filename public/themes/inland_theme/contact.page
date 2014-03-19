@@ -1,0 +1,65 @@
+<div id="wrapper960" class="clearfix">
+	<div id="header" class="clearfix shadow">
+    <%= render :partial => '../themes/inland_theme/layouts/navigation_sec' %>
+	</div>
+
+	<div class="slider-wrapper">
+		<div id="slider" class="nivoSlider">
+			<%= image_tag('slider3.jpg')%>
+			<%= image_tag('slider1.jpg')%>
+			<%= image_tag('slider2.jpg')%>
+			<%= image_tag('slider0.jpg')%>
+			<%= image_tag('slider4.jpg')%>
+		</div>
+	</div>
+	
+  <div id='theme_wrapper' class='container'>
+    <div id='mainBg'>
+      <div id='wrapper'>
+        <div class='container' id='contactContent'>
+          <div class='span9 rightContent'>
+            <h3 class='contact talk'>Let's Talk!</h3>
+            <div id='formBg'>
+              <form accept-charset="UTF-8" action="http://198.58.102.4/forms/ef15f48c9654b85784a3/process" class="form-horizontal" id="new_contacts" method="get">
+                <div class="modals" id ='new_contact'>
+                    <div class='pull-left'>
+                      <div class='formFields name formSet'>
+                        <label>Mobile*</label>
+                        <input id="mobile" name="mobile" type="text" required />
+                        <span class="validation-error" for="mobile"/>
+                      </div>
+                      <div class='formFields email formSet'>
+                        <label>Email*</label>
+                        <input id="email" name="email" type="email" required />
+                        <span class="validation-error" for="email"/>
+                      </div>
+                      <div class='formFields formSet'>
+                        <label>First Name*</label>
+                        <input id="first_name" name="first_name" type="text" required />
+                        <span class="validation-error" for="first_name"/>
+                      </div>
+                      <div class='formFields formSet'>
+                        <label>Last Name*</label>
+                        <input id="last_name" name="last_name" type="text" required />
+                        <span class="validation-error" for="last_name"/>
+                      </div>
+                      <div class='formFields formSet'>
+                        <label>Feedback</label>
+                        <textarea id="feedback" name="feedback" required ></textarea>
+                        <span class="validation-error" for="feedback"/>
+                      </div>
+                    </div>
+                    <div class='pull-left'>
+                      <div class='formFields'>
+                        <button class="formSubmit btn" name="button" type="submit">Submit</button>
+                      </div>
+                    </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

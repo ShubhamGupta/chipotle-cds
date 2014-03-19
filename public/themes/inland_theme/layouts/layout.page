@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:title) || @page.name %></title>
+
+    <%= stylesheet_link_tag "application", "inland", :media => "all" %>
+    <%= javascript_include_tag "custom_jquery.min", "inland_app", "jquery.nivo.slider", "custom_inland", "contacts" %>
+    <%= yield :scripts %>
+    <%= yield :styles %>
+    <% if edit_mode? %>
+      <%# initializing methods and events on document ready %>
+      <%= content_tag :script, :class => 'no-preview' do %>
+        var CKEDITOR_BASEPATH = '<%= ASSET_PREFIX %>/';
+        $(function(){
+          formMethods.init();
+          previewGenerator.init();
+          internal_link_set.init();
+          contact_form.init();
+        });
+      <% end %>
+      <%= stylesheet_link_tag "media_selection" %>
+      <%= javascript_include_tag "utility", "media_selection", "js/jquery.Jcrop" %>
+      <%= csrf_meta_tags %>
+    <% end %>
+  </head>
+  <body>
+    <% if edit_mode? %>
+    <%= form_tag site_page_path(@page.site_id, @page), :id=>'body_form', :multipart => true, :method => :put do %>
+      <!-- <a href='javascript:void(0)' class="btn btn-primary no-preview" id='page_save'>SAVE CHANGES</a> -->
+      <div id='main-wrap'>
+        <%= yield %>
+        <div id="footer" class="shadow">
+      		<p>&copy; 2012 Esha Mukherjee | Template design by <a href="http://vinsol.com">Vinsol</a>.</p>
+      	</div>
+      </div>
+    <% end %>
+    
+    <%# ALL BODY MODALS GOES HERE %>
+    <div class='no-preview'>
+
+      <!-- modal for media selection -->
+      <%= render :partial => '../themes/theme1/layouts/media_selector' %>
+
+      <%# Cropper %>
+      <%= render :partial => '../themes/theme1/layouts/cropping_modal' %>
+      <!-- form for changing nav-link -->
+      <div id="changeLink" class="modal hide fade no-preview" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h3 id="myModalLabel">EDIT LINK</h3>
+        </div>
+        <div class="modal-body">
+          <!-- edit_link partial here -->
+          <%= render :partial => '../themes/inland_theme/layouts/edit_link' %>
+        </div>
+      </div>
+
+    </div>
+    <div id='previewer' class='pull-right no-preview'>
+      <a href="#" role="button" class="btn  btn-inverse">GENERATE PREVIEW</a>
+    </div>
+    <div id='loader' class="no-preview">
+      <div class='image'>
+        <%= image_tag('loader.gif') %>
+      </div>
+    </div>
+    <% else %>
+      <div id='main-wrap'>
+        <%= yield %>
+        <div id="footer" class="shadow">
+      		<p>&copy; 2012 Esha Mukherjee | Template design by <a href="http://vinsol.com">Vinsol</a>.</p>
+      	</div>
+      </div>
+    <% end %>
+    <script type="text/javascript">
+        $(function() {
+          $('#slider').nivoSlider();
+          var action = $("#new_contacts").attr('action');
+          new ContactForm(action, "new_contacts");
+        });
+      </script>
+  </body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:title) || @page.name %></title>
+    <%= stylesheet_link_tag "application", "vinsol",:media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= yield :scripts %>
+    <%= yield :styles %>
+    <% if edit_mode? %>
+      <%# initializing methods and events on document ready %>
+      <%= content_tag :script, :class => 'no-preview' do %>
+        var CKEDITOR_BASEPATH = '<%= ASSET_PREFIX %>/';
+        $(function(){
+          formMethods.init();
+          previewGenerator.init();
+          internal_link_set.init();
+          contact_form.init();
+        });
+      <% end %>
+      <%= stylesheet_link_tag "media_selection" %>
+      <%= javascript_include_tag "vinsol", "media_selection", "js/jquery.Jcrop", "nested_division" %>
+      <%= csrf_meta_tags %>
+    <% end %>
+    <%= content_tag :script do %>
+      $(document).ready(function(){
+        <%= yield :document_ready_js %>
+      });
+    <% end %>
+  </head>
+  <body>
+    <% if edit_mode? %>
+    <%= form_tag site_page_path(@page.site_id, @page), :id=>'body_form', :multipart => true, :method => :put do %>
+      <!-- <a href='javascript:void(0)' class="btn btn-primary no-preview" id='page_save'>SAVE CHANGES</a> -->
+      <div id='main-wrap'>
+        <div class='container' id='head_size'>
+          <div id="header" class='row'>
+            <%= render :partial => '../themes/vinsol_theme/layouts/header' %>
+          </div>
+        </div>
+        <%= yield %>
+        <div class='footer'>
+          <div class='container'>
+            <%= render :partial => '../themes/vinsol_theme/layouts/footer' %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    
+    <%# ALL BODY MODALS GOES HERE %>
+    
+    <div class='no-preview'>
+      <!-- modal for media selection -->
+      <%= render :partial => '../themes/theme1/layouts/media_selector' %>
+
+      <%# Cropper %>
+      <%= render :partial => '../themes/theme1/layouts/cropping_modal' %>
+      <div id="myModal" class="modal hide fade contact_form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><%= image_tag 'close.png', alt: 'Close'%>
+            <!-- <img src="/assets/new_img/close.png" alt='Close'> -->
+          </button>
+        </div>
+        <div class="modal-body" id="modals">
+          <h3 class='contact talk'>Let's Talk</h3>
+           <%= render :partial => "../themes/vinsol_theme/layouts/contact_form" %>
+        </div>
+      </div>
+
+
+
+      <!-- form for changing nav-link -->
+      <div id="changeLink" class="modal hide fade no-preview" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h3 id="myModalLabel">EDIT LINK</h3>
+        </div>
+        <div class="modal-body">
+          <!-- edit_link partial here -->
+          <%= render :partial => '../themes/vinsol_theme/layouts/edit_link' %>
+        </div>
+      </div>
+
+      <!-- Form for editing number of links -->
+      <div id="changeNavNum" class="modal hide fade no-preview" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h3 id="myModalLabel">EDIT NAVIGATION BAR</h3>
+        </div>
+        <div class="modal-body">
+          <!-- edit capacity pattial here -->
+          <%= render :partial => '../themes/vinsol_theme/layouts/edit_capacity' %>
+        </div>
+      </div>
+
+      <!-- Form for editing links of navigation-bar -->
+      <div id="changeNavStruct" class="modal hide fade no-preview" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h3 id="myModalLabel">EDIT NAVIGATION ITEM</h3>
+        </div>
+        <div class="modal-body">
+          <div id='choice_section'>
+           <h3>Select Link Type</h3>
+           <label class="radio inline">
+             <input type="radio" name="linkTypeRadios" id="linkType_folder" value="folder" checked >
+             FOLDER PROPERTIES
+           </label>
+           <label class="radio inline">
+             <input type="radio" name="linkTypeRadios" id="linkType_link" value="link" >
+             LINK PROPERTIES
+           </label>
+          </div>
+
+          <div id='item_folder'>
+            <!-- edit capacity partial here -->
+            <%= render :partial => '../themes/vinsol_theme/layouts/edit_capacity' %>
+          </div>
+          <div id='item_link'>
+            <!-- edit_link partial here -->
+            <%= render :partial => '../themes/vinsol_theme/layouts/edit_link' %>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div id='previewer' class='pull-right no-preview'>
+      <a href="#" role="button" class="btn  btn-inverse">GENERATE PREVIEW</a>
+    </div>
+    <div id='loader' class="no-preview">
+      <div class='image'>
+        <%= image_tag('loader.gif') %>
+      </div>
+    </div>
+    <%# EM : No need to use content_for tag in layout, directly put code in edit_mode? block under HEAD section %>
+    <% else %>
+      <div id='main-wrap'>
+        <div class='container' id='head_size'>
+          <div id="header" class='row'>
+            <%= render :partial => '../themes/vinsol_theme/layouts/header' %>
+          </div>
+        </div>
+        <%= yield %>
+        <div class='footer'>
+          <div class='container'>
+            <%= render :partial => '../themes/vinsol_theme/layouts/footer' %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <%#= javascript_include_tag "javascripts/custom" %>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+################# SAMPLE : WAYS TO INTEGRATE DSL IN TEMPLATE FOR PROPER FUNCTIONING ############################
+
+
+************* TOGGLE PROPERTY *******
+  #: pass `data_visible=true` attribute in options
+*************************************
+
+
+**********ANCHOR TAGS******************
+
+<%= display :link, :text=>"<default text>", :href=>'#', :id => "<desired unique id>", :class=>"(add head_nav_link or doc_link)" %>
+
+
+*************IMAGES************************
+
+# : add class 'image_sec' to enclosing div
+
+<div class='image_sec'>
+  <%= display :image %>
+</div>
+
+
+
+
+*************AUDIO************************
+
+# : add class 'audio_sec' to enclosing div
+
+<div class='audio_sec' id='<unique ID>' >
+  <%= display :audio, :id => '<unique ID>', :controls => true %>
+</div>
+
+
+
+
+*************VIDEO************************
+
+# : add class 'video_sec' to enclosing div
+
+<div class='video_sec' id='<unique ID>'>                  
+  <%= display :video, :id => '<unique ID>', :width=>"<desired width>", :height=>"<desired height>", :controls => true %>
+</div>
+
+
+***********TEXT AREA*********************
+
+:contenteditable => "true" COMPULSORY FOR MAKING AREA EDITABLE 
+
+NOTE: We may or may not add class to the division in which we are enclosing the text block
+It is entirely upon your discretion to use class or any other HTML option with the enclosing 
+div having the text_block
+
+
+<div class="text_block">
+  <%= display :text_block, :id => '<unique ID>', :contenteditable => "true" do %>
+    < PRE FILLED DATA IN HERE>
+    < USE HTML ENTITIES FOR SPECIAL CHARACTERS > 
+  <% end %>
+</div>
+
+
+
+******************LINKABLE LOGO IMAGE*****************
+
+ID logo_sec IS REQUIRED [USABILITY ONCE ONLY IN A TEMPLATE]
+
+ADD CLASS 'logo_link' TO THE LINK PART
+
+
+<div id='logo_sec'>
+  <%= display :linkable_image, :id => "logo",
+  :image_options => { :width => "200px", :height => "200px"},
+  :link_options => { :class => "logo_link" }, :href => "#", :role=>"button" %>
+</div>
+

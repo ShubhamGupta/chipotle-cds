@@ -1,0 +1,109 @@
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+  var infowindow = new google.maps.InfoWindow({});
+  function initializeND() {
+    var myLatlng = new google.maps.LatLng(28.646593,77.168775);
+    var myOptions = {
+      zoom: 13,
+      center: myLatlng,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      mapTypeControl: false
+    };
+    var map = new google.maps.Map(document.getElementById("mapND"), myOptions);
+
+    var marker = new google.maps.Marker({
+        position: myLatlng,
+        map: map
+    });
+    
+    google.maps.event.addListener(marker, "click", function() { 
+      
+      infowindow.setContent('VinSol<br />2/6, West Patel Nagar,<br />New Delhi - 110008');
+      
+      infowindow.open(map, this);
+      
+      });
+  }
+  
+  function initializeSF() {
+    var myLatlng = new google.maps.LatLng(37.763311,-122.399479);
+    var myOptions = {
+      zoom: 14,
+      center: myLatlng,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      mapTypeControl: false      
+    };
+    var map = new google.maps.Map(document.getElementById("mapSF"), myOptions);
+
+    var marker = new google.maps.Marker({
+        position: myLatlng,
+        map: map
+    });
+    
+    google.maps.event.addListener(marker, "click", function() { 
+      
+      infowindow.setContent('VinSol<br />1501, Mariposa st, Suite 200,<br />SanFrancisco , CA 94107');
+      
+      infowindow.open(map, this);
+      
+      });
+  }
+  
+  
+</script>
+
+<%= javascript_include_tag "nested_division" %>
+  <div id='theme_wrapper' class='container'>
+    <div id='mainBg'>
+      <div id='wrapper' class=''>
+        <div class='container' id='contactContent'>
+          <div class='span3 leftContent pull-left'>
+            <div id='newDelhi' class='map'>
+              <h3>NEW DELHI</h3>
+              <div class='addr'>2/6, West Patel Nagar<br />New Delhi - 110008</div>
+              <div id="mapND"></div>
+              <a class='getDir' href="http://maps.google.com/maps?saddr=28.646593,77.168775&daddr=" target="_blank">GET DIRECTIONS</a>
+            </div>
+            <div id='sanFrancisco' class='map'>
+              <h3>SAN FRANCISCO</h3>
+              <div class='addr'>1501 Mariposa St<br />Suite 200<br />San Francisco, CA 94107</div>
+              <div id="mapSF"></div>
+              <a class='getDir' href="http://maps.google.com/maps?saddr=37.763311,-122.399479&daddr=" target="_blank">GET DIRECTIONS</a>
+            </div>
+          </div>
+          <div class='span8 rightContent pull-right'>
+            <h3 class='contact talk'>Know About Us!</h3>
+            <div>
+              <%= division :id => 'division1', :max_counts => 5 do %>
+                 <div class="repeatable radius_4">
+                  
+                  <%# HEADING BLOCK %>
+                  <div>
+                    <%= display :text_block, :contenteditable => "true" do %>
+                      <h3> EDIT Heading For Section! </h3>
+                    <% end %>
+                  </div>
+                  
+                  <%# TEXT BLOCK %>
+                  <div>
+                    <%= display :text_block, :contenteditable => "true" do %>
+                      Click to Edit data here!
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    <% end %>
+                  </div>
+
+                 </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<script type="text/javascript" charset="utf-8">
+  initializeND();
+  initializeSF();
+</script>

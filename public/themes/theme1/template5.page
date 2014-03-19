@@ -1,0 +1,114 @@
+<%= javascript_include_tag "nested_division" %>
+<div id='theme_wrapper' class='container'>
+  <div id="header" class='row'>
+    <div class='row'>
+      <div id='logo_sec' class='pull-left'>
+        <%#= display :linkable_image, :id => "logo",
+        :image_options => { :width => "200px", :height => "200px"},
+        :link_options => { :class => "logo_link" }, :href => "#", :role=>"button" %>
+        <%= image_tag('vin_logo.png') %>
+      </div>
+    </div>
+    <div class='row navigation_section'>
+      <%# Navigation bar rendering will be here ! %>
+      <div id='nav-section' class='nav-section radius_4'>
+        <%= display_navigation_bar :id => 'nav_bar' %>
+      </div
+    </div>
+  </div>
+  <div id='main_body' class='row'>
+    <h4> DEMO FOR DIVISION REPEAT </h4>
+    <div class='span12 pull-left'>        
+      <%# REPEAT DIVISION SAMPLE %>
+      
+      <%= division :id => 'division1', :max_counts => 5 do %>
+        
+        <div class="repeatable radius_4">
+        
+          <dl>
+            <dt>
+              <%# IMAGE %>
+              <div class='image_sec'>
+
+                <%= display :image, :src => 'add_member.png' %>
+              </div>
+              <div class='image_sec'>
+                <%= display :image, :data_visible => true %>
+
+                <%#= display :image, :src => 'no-theme.png' %>
+              </div>
+            </dt>
+            <dd>
+              <%# TEXT BLOCK %>
+              <div class="text_block">
+                <%= display :text_block, :contenteditable => "true" do %>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                <% end %>
+              </div>
+            </dd>
+          </dl>
+        
+
+          
+          <%# AUDIO %>
+          <div class='audio_sec'>
+            <%= display :audio, :controls => true, :data_visible => true %>
+          </div>
+          
+          
+          <%# VIDEO %>
+          <!-- <div class='video_sec'> -->
+             <%#= display :video, :width=>"400", :height=>"400",:controls => true %>
+          <!-- </div> -->
+          
+          <%# EDITABLE LINK %>
+          <div class='link_sec'>
+            <%#= display :link %>
+            <%= display :link, :text=>"LinkedIN", :href=>'#', :class=>"doc_link" %>
+          </div>
+        </div>
+        
+      <% end %>
+      
+      
+      
+      
+      <%# TEST PURPOSE BLOCK %>
+      
+      <%#= division :id => 'division2', :max_counts => 5 do %>
+        <!-- <div class="repeatable"> -->
+          <%#= display :image %>
+          <%#= display :text_block do %>
+            <!-- ldkjasndasdkjasnhdasdlkasunhdms -->
+          <%# end %>
+        <!-- </div> -->
+      <%# end %>
+      <!-- <div class="repeatable">
+        <%#= display :image, :marker_id => 'oustide_division1' %>
+        <%#= display :text_block, :marker_id => 'oustide_division2' do %>
+          ldkjasndasdkjasnhdasdlkasunhdms
+        <%# end %>
+      </div> -->
+    </div>
+    
+    <div id='footer' class='span12 pull-left'>
+      <ul class="nav nav-tabs">
+        <li>
+          <%= display :link, :text=>"Footer A", :href=>'#', :id => "footer_link_1", :class=>"head_nav_link" %>
+        </li>
+        <li>
+          <%= display :link, :text=>"Footer B", :href=>'#', :id => "footer_link_2", :class=>"head_nav_link" %>
+        </li>
+        <li>
+          <%= display :link, :text=>"Footer C", :href=>'#', :id => "footer_link_3", :class=>"head_nav_link" %>
+        </li>
+        <li>
+          <%= display :link, :text=>"Footer D", :href=>'#', :id => "footer_link_4", :class=>"head_nav_link" %>
+        </li>
+        <li>
+          <%= display :link, :text=>"Footer E", :href=>'#', :id => "footer_link_5", :class=>"head_nav_link" %>
+        </li>
+      </ul>      
+    </div>
+  </div>
+</div>
