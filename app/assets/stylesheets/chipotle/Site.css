@@ -1,0 +1,284 @@
+﻿/* zooming overides */
+html { -webkit-text-size-adjust: none; /*IPhone fix*/ }
+img, object { max-width: 100%; height: auto; width: auto\9; /*IE Fix*/ }
+.video embed, .video object, .video iframe { width: 100%; height: auto; /*Safari Fix*/ }
+		
+/* base styles */
+#body-max { max-width: 1200px; margin: 0px auto 0px auto; text-align: center; }
+body { min-width: 319px; padding: 0px; margin: 0px; margin: 0 auto; text-align: center }
+.center-v-wrapper { display: table; width: 100%; height: 100%; }
+.center-v-cell { display: table-cell; vertical-align: middle; }
+.center-h { margin: auto; max-width: 1200px }
+.cluster { display: inline-block; vertical-align: top; }
+.clear { clear: both; width: 100%; height: 0px; }
+.spacer-5 { height: 5px; display: block; }
+
+/* this site specific min980-max1199 */
+body { font-size: 13px; font-family: Arial, Helvetica, sans-serif; color: #451500; background-image: url('/assets/common/bg_light.jpg'); }
+h3 { font-size: 20px; color: #887772; }
+h2 { font-size: 33px; color: #887772; }
+h1 { font-size: 38px; color: #887772; }
+h2 b { color: #451400; }
+h1 b { color: #451400; }
+f1 { text-transform: uppercase; position: relative; top: 3px; }
+
+.q-button { font-weight: bold; font-size: 14px; height: 26px; border: 1px solid #B42B24; background-color: #B42B24; color: #FFFFFF !Important; cursor: pointer;
+            border-radius: 4px; 
+			-webkit-border-radius: 4px; 
+			-moz-border-radius: 4px;  
+          }
+.q-button:hover { border: 1px solid #94161B; background-color: #94161B; }
+.q-button:active { border: 1px solid #B42B24; background-color: #94161B; }
+.button-order { background-color: #B42B24; background-size: 100% 100%; background-repeat:no-repeat; width: 142px; height: 32px; cursor: pointer;
+	border-radius: 4px; 
+	-webkit-border-radius: 4px; 
+	-moz-border-radius: 4px;
+}
+.button-order:hover { background-color: #94161B; }
+
+.font-head { font-family:'Francois One'; font-size:18px; color: #54392d; }
+.font-head:hover { color: #ad2118; }
+.font-order { font-size: 20px; position: relative; top:-2px; }
+.text-brown { color: #662D3D; }
+.opaque { z-index: 1; background-image: url('/assets/common/bg_light.jpg'); display: inline-block; }
+.burrito-image { background: url('/assets/home/the_chipotle_burrito2x.jpg') center bottom no-repeat; height: 353px; width: 653px; background-size: 653px 353px; /*also in IE css*/ }
+
+.highlight-dark { color: #451400; }
+.anchor-color-plain { color: inherit; }
+.anchor-all-plain:link { color: inherit; text-decoration:none; }
+.anchor-all-plain:visited { color: inherit; text-decoration:none; }
+.anchor-all-plain:hover { color: inherit; text-decoration:none; }
+.anchor-all-plain:active { color: inherit; text-decoration:none; }
+.head-gap { display: block; height: 7px; width: 100%; }
+.title-gap { display: block; height: 30px; width: 100%; }
+.title-pushdown { display: block; height: 20px; width: 100%; }
+.title-shift { position: relative; top: 23px; padding: 0 7px; }
+.headblock { float: left; width: 20%; height: 80px; display: inline; /*IE Fix*/ }
+#order.headblock { padding-left: 15px }
+.margin-10 { float: left; width: 9%; height: 100%; display: inline; /*IE Fix*/ }
+.margined-10 { float: left; width: 81%; }
+.margin-15 { float: left; width: 15%; height: 100%; display: inline; /*IE Fix*/ }
+.margined-15 { float: left; width: 70%; }
+.margin-m { float: left; width: 7%; height: 100%; display: inline; /*IE Fix*/ }
+.margined-m { float: left; width: 86%; }
+.margin-20 { float: left; width: 20%; height: 100%; display: inline; /*IE Fix*/ }
+.margined-20 { float: left; width: 60%; }
+.ui-icon { display: inline-block; color: #FFFFFF; }
+.arrow-order { background-image: url('/assets/arrow_white.gif'); display: inline-block; background-repeat:no-repeat; width: 17px; height: 13px; position: relative; top: 5px; }
+.arrow-jump { background-image: url('/assets/common/up_arrow.png'); display: inline-block; background-repeat:no-repeat; width: 8px; height: 6px; position: relative; top: 6px; }
+.hr { background: url('/assets/header_border_base.gif') repeat-x top left; height: 2px; }
+.half-em-down { position: relative; top: 0.6em; display: inline-block; }
+.one-em-down { position: relative; top: 1.0em; display: inline-block; }
+.qrtr-em-up { position: relative; top: -0.2em; display: inline-block; }
+.back-top { float: right; color: #9F918C; }
+.footblock { float: left; background-color: #3A241A; color: #B8AFA4; height: 160px; width: 33.33%; max-width: 400px; display: inline /*IE Fix*/ }
+.foot-hr-v { float: right; display: block; width: 1px; height: 90px; border-style: solid; border-color: #695953; border-width: 0px 1px 0px 0px; }
+.foot-hr-h { display: block; width: 30%; height: 1px; border-style: solid; border-color: #695953; border-width: 1px 0px 0px 0px; }
+.footbase { background-color: #22140E; color: #B8AFA4; height: 45px; width: 100%; display: block; max-width: 1200px; margin: 0 auto }
+.onepx { display:block; width: 1px; height: 1px; }
+.eighty-wide { display:inline-block; width: 80px; }
+.onehun-wide { display:inline-block; width: 100px; }
+.full-wide { display:inline-block; width: 100%; }
+.hide-small { display: inline-block; }
+.hide-large { display: none; }
+.location-holder { display: inline-block; width: 280px; margin: 10px 10px }
+.location-map-wrapper { display:inline-block; background: url('/assets/locations/location_bg2x.jpg'); width: 231px; height: 165px; 
+                        background-size: 231px 165px; padding-top: 16px; margin: 10px auto; /*also in IE css*/ }
+.location { width: 200px; height: 135px; margin: 0 auto }
+.location-address { font-weight: bold; margin-bottom: 5px }
+.location-hours { font-weight: bold; }
+#footer { margin-top: 50px; background-color: #3A241A; width: 100% }
+.footblock-wrapper { max-width: 1200px; background-color: #3A241A; text-align: center; margin: 0 auto;  }
+.footbase-wrapper { width: 100%; background-color: #22140E; text-align: center}
+.location-shift {margin-top: -40px;}
+
+/* hovers */
+.image-button { cursor: pointer }
+.order-now { background: url('/assets/common/order_now.png'); width: 142px; height: 32px }
+.order-now-hover { background: url('/assets/common/order_now_hover.png') no-repeat -9999px -9999px; } /* pre-load */
+.order-now:hover { background: url('/assets/common/order_now_hover.png'); }
+.order-now-location { background: url('/assets/locations/order_now.png'); width: 96px; height: 25px; float: right; margin: 10px 38px 10px 0 }
+.order-now-location-hover { background: url('/assets/locations/order_now_hover.png') no-repeat -9999px -9999px; } /* pre-load */
+.order-now-location:hover { background: url('/assets/locations/order_now_hover.png'); }
+.button-order .q-button { font-size: inherit; }
+.directions { background: url('/assets/locations/directions.png'); width: 95px; height: 25px; margin: 10px 0 10px 38px }
+.directions-hover { background: url('/assets/locations/directions_hover.png') no-repeat -9999px -9999px; } /* pre-load */
+.directions:hover { background: url('/assets/locations/directions_hover.png');  }
+#nav-menu { background: url(/assets/nav/menu.png); width: 42px; height: 15px; display: inline-block }
+#nav-menu-hover { background: url(/assets/nav/menu_hover.png) no-repeat -9999px -9999px;  } /* pre-load */
+#nav-menu:hover { background: url(/assets/nav/menu_hover.png) }
+#nav-ingredients { background: url(/assets/nav/ingredients.png); width: 94px; height: 15px; display: inline-block }
+#nav-ingredients-hover { background: url(/assets/nav/ingredients_hover.png) no-repeat -9999px -9999px; } /* pre-load */
+#nav-ingredients:hover { background: url(/assets/nav/ingredients_hover.png) }
+#nav-uk-locations { background: url(/assets/nav/uk_locations.png); width: 103px; height: 15px; display: inline-block }
+#nav-uk-locations-hover { background: url(/assets/nav/uk_locations_hover.png) no-repeat -9999px -9999px; } /* pre-load */
+#nav-uk-locations:hover { background: url(/assets/nav/uk_locations_hover.png) }
+
+/* ingredients grid */
+.ingredients-holder { height: 426px; white-space: nowrap; }
+.ingredients { width: 560px; display: inline-block; }
+.ingredients-grid { display: inline-block; overflow: hidden; }
+.ingredient-grid { vertical-align: middle; height: 104px; width: 94px; text-align: center; cursor: pointer; }
+.ingredient-bottom-right { border-right: 1px dashed #b8a79c; border-bottom: 1px dashed #b8a79c; }
+.ingredient-bottom { border-bottom: 1px dashed #b8a79c; }
+.ingredient-right { border-right: 1px dashed #b8a79c; }
+.ingredient-desc-header { font-size: 14px; font-weight: bold; color: #663d2d; margin-bottom: 5px; }
+.ingredient-desc { position: relative; margin: -60px 0 0 30px; width: 510px; text-align: left; white-space: normal; }
+.ingredient-highlight { background: url('/assets/ingredients/mobile/highlight_bg.png'); }
+.ingredient-image { margin: 15px 10px; text-align: center; }
+.ingredient-item { padding: 10px; vertical-align: middle; }
+.ingredients-item-column { min-width: 152px; }
+#ingredients-wide { display: block; }
+#ingredients-narrow { display: none; width: 100%; margin-bottom: 110px; }
+
+/* menu items */
+.menu-item-holder { display: inline-block; padding: 15px 10px; max-width: 100% }
+.menu-item-holder > img { height: 221px; }
+.menu-item-header { font-weight: bold; color: #663d2d; margin-bottom: 10px; font-size: 16px }
+.menu-item-desc { width: 300px; margin: 0 auto; }
+.ingredientsCell { overflow:hidden; height: 100px; }
+.thumbLabel {position: relative; top: -17px; color: #887772; }
+
+#highlogo { width:100%; display: none; }
+
+@media(-webkit-min-device-pixel-ratio: 2)
+{
+    
+}
+
+/* Large desktop */
+@media (min-width: 1200px)
+{
+}
+/* css default for min980-max1199 NOTE: 980 is handled by all our default CSS above the media tags */
+/* Landscape tablet */
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) 
+{
+    h3 { font-size: 20px; }
+    h2 { font-size: 27px; }
+    h1 { font-size: 35px; }
+	.margin-10 { width: 7%; }
+	.margined-10 { width: 86%; }
+	.margin-20 { width: 14%; }
+	.margined-20 { width: 72%; }
+    .title-pushdown { height: 25px; }
+	.title-shift { top: 23px; }
+	#ingredients-wide { display: none }
+	#ingredients-narrow { display: block }
+	.ingredient-desc { margin: 0; padding: 15px 5px; width: 100% }
+}
+/* Landscape phone to portrait tablet */
+@media (min-width: 481px) and (max-width: 767px) 
+{
+	f1 { top: 2px; }
+    h3 { font-size: 20px; }
+    h2 { font-size: 23px; }
+    h1 { font-size: 30px; }
+	.headblock { width: 28%; height: 40px;}
+	#menu.headblock { width: 16% }
+    .burrito-image { background: url('/assets/home/the_chipotle_burrito_medium2x.jpg') bottom center no-repeat; width: 433px; height: 270px; background-size: 433px 236px; /*also in IE css*/ }
+	.hide-large { display: inline-block; }
+	.hide-small { display: none; }
+	.margin-10 { width: 5%; }
+	.margined-10 { width: 90%; }
+	.margin-20 { width: 8%; }
+	.margined-20 { width: 84%; }
+    .title-pushdown { height: 10px; }
+	.title-shift { top: 20px; }
+	.button-order { width: 87px; height: 25px; }
+	.button-order .q-button { width: 87px; height: 21px; }
+	.font-order { top: -4px; }
+	.arrow-order { width: 12px; height: 9px; background-size: 100% 100%; top: 5px; }	
+	.footblock { width: 100%; height: 130px; float: none;}
+    .footblock-wrapper { width: 100% }
+	#inlinelogo { width: 100px; }
+	#ingredients-wide { display: none }
+	#ingredients-narrow { display: block }
+	.ingredient-desc { margin: 0; padding: 15px 5px; width: 100% }
+}
+
+/* temporary media query until we define our standards */
+@media (min-width: 580px) and (max-width: 768px)
+{
+    /* boorito active 10/8-10/31 */
+    #boorito { width: 555px; }
+    #boorito-bg { background: url("/assets/home/boorito/boorito-bg-med2x.jpg") no-repeat; width: 555px; height: 435px; background-size: 555px 435px; top: -8px; left: 0; margin: 0 auto; }
+    #boorito-inner { margin-left: 18px; }
+    #boorito h1 { width: 535px; }
+    #boorito .foundation { top: 233px; }
+    #boorito .jamie-oliver { background: url("/assets/home/boorito/jamie-oliver-food-foundation-med2x.png") no-repeat; width: 114px; height: 73px; background-size: 114px 73px; }
+    #boorito .foundation p { font-size: 12px;}
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) 
+{
+    /* for debugging */
+    /*body { border: 1px solid red; }*/
+
+	.burrito-image .cufon {overflow: hidden; padding: 2px 0px 0px 0px; } /* cufon has a border that extends past the html boundries cousing i phone to scrole if you skip this */
+	.back-top { display: none; }
+
+	f1 { top: 0px; }
+    h3 { font-size: 18px; }
+    h2 { font-size: 20px; }
+    h1 { font-size: 28px; }
+	.headblock { width: 28%; height: 40px;}
+	#menu.headblock { width: 16% }
+	.hide-large { display: inline-block; }
+	.hide-small { display: none; }
+    .burrito-image { background: url('/assets/home/the_chipotle_burrito_mobile2x.jpg') center bottom no-repeat; width: 310px; height: 225px;  background-size: 310px 169px; }
+	.margin-10 { width: 1%; }
+	.margined-10 { width: 96%; }
+	.margin-20 { width: 2%; }
+	.margined-20 { width: 94%; }
+    .title-pushdown { height: 0px; }
+	.title-shift { top: 15px; }
+	.button-order { width: 65px; height: 20px; }
+	.button-order .q-button { width: 61px; height: 18px; }
+	.font-order { top: -2px; left: 2px; font-size: 15px; }
+	.font-head { font-size: 14px; }
+	.arrow-order { width: 12px; height: 9px; background-size: 100% 100%; top: 3px; }
+	.hide-very-small { display: none; }
+	.move-very-small { margin-left: 15px; }
+	.footblock { width: 100%; height: 130px; float: none; }
+    .footblock-wrapper { width: 100% }
+	#inlinelogo { width: 90px; }
+	#ingredients-wide { display: none }
+	#ingredients-narrow { display: block }
+	.ingredient-desc { margin: 0; padding: 15px 5px; width: 100% }
+    #nav-menu { background: url(/assets/nav/mobile/menu.png); width: 35px; height: 12px; display: inline-block }
+    #nav-menu-hover { background: url(/assets/nav/mobile/menu_hover.png); display: none  } /* pre-load */
+    #nav-menu:hover { background: url(/assets/nav/mobile/menu_hover.png) }
+    #nav-ingredients { background: url(/assets/nav/mobile/ingredients.png); width: 81px; height: 12px; display: inline-block }
+    #nav-ingredients-hover { background: url(/assets/nav/mobile/ingredients_hover.png); display: none  } /* pre-load */
+    #nav-ingredients:hover { background: url(/assets/nav/mobile/ingredients_hover.png) }
+    #nav-uk-locations { background: url(/assets/nav/mobile/uk_locations.png); width: 88px; height: 12px; display: inline-block }
+    #nav-uk-locations-hover { background: url(/assets/nav/mobile/uk_locations_hover.png); display: none  } /* pre-load */
+    #nav-uk-locations:hover { background: url(/assets/nav/mobile/uk_locations_hover.png) }
+}
+
+/* temporary media query until we define our standards */
+@media (max-width: 580px)
+{
+    /* boorito active 10/8-10/31 */
+    #boorito { width: 294px; }
+    #boorito-bg { background: url("/assets/home/boorito/boorito-bg-sm2x.jpg") no-repeat; width: 294px; height: 294px; background-size: 294px 294px; top: -15px; left: 0; margin: 0 auto;}
+    #boorito-inner { margin-left: 0; }
+    #boorito h1 { width: 100%; top: 90px; font-size: 14px; }
+    #boorito .foundation { top: 203px; left: 20px; width: 274px }
+    #boorito .jamie-oliver { background: url("/assets/home/boorito/jamie-oliver-food-foundation-sm2x.png") no-repeat; width: 70px; height: 45px;  background-size: 70px 45px; }
+    #boorito .foundation p { font-size: 9px; }
+    #boorito .pound { margin-top: -1px; width:6px; height: 9px}
+}
+@media (max-width: 320px)
+{
+    /* for debugging */
+    /*body { border: 1px solid green; }*/
+}
+
+#fonts-test {display: none; position: absolute; top: 90px;}
+
+
