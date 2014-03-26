@@ -2,7 +2,11 @@ worker_processes 4
 timeout 15
 preload_app true
 
-user 'deployer'
+stderr_path "/var/www/chipotle-cds/current/log/unicorn.log"
+stdout_path "/var/www/chipotle-cds/current/log/unicorn.log"
+
+# Unicorn socket
+listen "/tmp/unicorn.chi-cds.sock"
 
 before_fork do |server, worker|
   Signal.trap 'TERM' do

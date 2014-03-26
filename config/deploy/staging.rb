@@ -4,9 +4,9 @@
 # server in each group is considered to be the first
 # unless any hosts have the primary property set.
 # Don't declare `role :all`, it's a meta role
-role :app, '172.31.23.156'
-role :web, '172.31.23.156'
-role :db,  '172.31.23.156'
+role :app, 'ec2-54-238-232-126.ap-northeast-1.compute.amazonaws.com'
+role :web, 'ec2-54-238-232-126.ap-northeast-1.compute.amazonaws.com'
+role :db,  'ec2-54-238-232-126.ap-northeast-1.compute.amazonaws.com'
 
 # Extended Server Syntax
 # ======================
@@ -15,17 +15,17 @@ role :db,  '172.31.23.156'
 # something that quacks like a hash can be used to set
 # extended properties on the server.
 set :rails_env, :staging
-server '172.31.23.156', user: 'deployer', roles: %w{web app}
-
+server 'ec2-54-238-232-126.ap-northeast-1.compute.amazonaws.com', user: 'ubuntu', roles: %w{web app}, primary: true
 # you can set custom ssh options
 # it's possible to pass any option but you need to keep in mind that net/ssh understand limited list of options
 # you can see them in [net/ssh documentation](http://net-ssh.github.io/net-ssh/classes/Net/SSH.html#method-c-start)
 # set it globally
-#  set :ssh_options, {
-#    keys: %w(/home/rlisowski/.ssh/id_rsa),
-#    forward_agent: false,
-#    auth_methods: %w(password)
-#  }
+ set :ssh_options, {
+   user: 'ubuntu',
+   keys: %w(~/.ssh/chipotle_keys/r.pem),
+   forward_agent: false,
+   auth_methods: %w(publickey)
+ }
 # and/or per server
 # server 'example.com',
 #   user: 'user_name',
