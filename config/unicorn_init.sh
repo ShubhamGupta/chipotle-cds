@@ -16,7 +16,7 @@ APP_ROOT=/var/www/chipotle/current
 SHARED_ROOT=/var/www/chipotle/shared
 PID=$SHARED_ROOT/tmp/pids/unicorn.pid
 CMD="cd $APP_ROOT; bundle exec unicorn -D -c $APP_ROOT/config/unicorn.rb -E stage1"
-AS_USER=vinsol
+AS_USER=deployer
 set -u
 
 OLD_PIN="$PID.oldbin"
