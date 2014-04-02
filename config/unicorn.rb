@@ -2,8 +2,8 @@ worker_processes 4
 timeout 15
 preload_app true
 
-stderr_path "/var/www/chipotle-cds/current/log/unicorn.log"
-stdout_path "/var/www/chipotle-cds/current/log/unicorn.log"
+stderr_path "/var/www/chipotle/current/log/unicorn.log"
+stdout_path "/var/www/chipotle/current/log/unicorn.log"
 
 # Unicorn socket
 listen "/tmp/unicorn.chi-cds.sock"
