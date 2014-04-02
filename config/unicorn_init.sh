@@ -12,10 +12,10 @@ set -e
 
 # Feel free to change any of the following variables for your app:
 TIMEOUT=${TIMEOUT-60}
-APP_ROOT=/var/www/Kleen/current
-SHARED_ROOT=/var/www/Kleen/shared
+APP_ROOT=/var/www/chipotle/current
+SHARED_ROOT=/var/www/chipotle/shared
 PID=$SHARED_ROOT/tmp/pids/unicorn.pid
-CMD="cd $APP_ROOT; bundle exec unicorn -D -c $APP_ROOT/config/unicorn.rb -E preprod"
+CMD="cd $APP_ROOT; bundle exec unicorn -D -c $APP_ROOT/config/unicorn.rb -E stage1"
 AS_USER=vinsol
 set -u
 
