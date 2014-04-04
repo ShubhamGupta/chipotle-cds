@@ -28,6 +28,7 @@ gem 'thread_safe', '~> 0.3.1'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
+gem 'non-stupid-digest-assets', '~> 1.0.4'
 
 gem 'unicorn'
 
