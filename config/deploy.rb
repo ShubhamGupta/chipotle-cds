@@ -61,7 +61,7 @@ namespace :deploy do
 
   task :setup_config do
     on roles(:app) do
-      execute "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_chipotle"
+      execute "ln -nfs #{current_path}/config/unicorn_init.sh /var/www/chipotle/shared/unicorn_chipotle"
     end
   end
   before "deploy", "deploy:setup_config"
@@ -78,14 +78,14 @@ namespace :deploy do
     end
   end
 
-  # %w[start stop restart].each do |command|
-  #   desc "#{command} unicorn server"
-  #   task command do
-  #     on roles(:app) do
-  #       execute "/etc/init.d/unicorn_chipotle/unicorn_init.sh #{command}"
-  #     end
-  #   end
-  # end
+  %w[start stop restart].each do |command|
+    desc "#{command} unicorn server"
+    task command do
+      on roles(:app) do
+        execute "/var/www/chipotle/shared/unicorn_chipotle/unicorn_init.sh #{command}"
+      end
+    end
+  end
    
  after :finishing, :app_setup
  # after :app_setup, :unicorn_server
