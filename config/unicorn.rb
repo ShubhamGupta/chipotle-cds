@@ -17,7 +17,7 @@ GC.respond_to?(:copy_on_write_friendly=) and
 check_client_connection false
 
 # Unicorn socket
-listen "/tmp/unicorn.chi-cds.sock", backlog: 64
+listen "#{@dir}tmp/sockets/unicorn.sock", backlog: 64
 
 before_fork do |server, worker|
   Signal.trap 'TERM' do
