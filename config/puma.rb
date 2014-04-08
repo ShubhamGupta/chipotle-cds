@@ -27,7 +27,9 @@
 #
 # The default is “development”.
 #
-environment 'development'
+
+APP_ROOT = '/var/www/chipotle'
+environment 'stage1'
 
 # Daemonize the server into the background. Highly suggest that
 # this be combined with “pidfile” and “stdout_redirect”.
@@ -35,23 +37,23 @@ environment 'development'
 # The default is “false”.
 #
 # daemonize
-# daemonize false
+daemonize true
 
 # Store the pid of the server in the file at “path”.
 #
-pidfile '~/tmp/pids/puma.pid'
+pidfile "#{ APP_ROOT }/shared/tmp/pids/puma.pid"
 
 # Use “path” as the file to store the server info state. This is
 # used by “pumactl” to query and control the server.
 #
-state_path '~/tmp/pids/puma.state'
+state_path "#{ APP_ROOT }/shared/tmp/pids/puma.state"
 
 # Redirect STDOUT and STDERR to files specified. The 3rd parameter
 # (“append”) specifies whether the output is appended, the default is
 # “false”.
 #
 # stdout_redirect '/u/apps/lolcat/log/stdout', '/u/apps/lolcat/log/stderr'
-stdout_redirect "../log/stdout", "../log/stderr", true
+stdout_redirect "#{ APP_ROOT }/log/puma_stdout.log", "#{ APP_ROOT }/log/puma_stderr.log", true
 
 # Disable request logging.
 #
@@ -72,7 +74,7 @@ threads 4, 32
 # The default is “tcp://0.0.0.0:9292”.
 #
 # bind 'tcp://0.0.0.0:9292'
-bind 'unix:///var/run/puma.sock'
+bind "unix://#{ APP_ROOT }/shared/tmp/sockets/puma.sock"
 # bind 'unix:///var/run/puma.sock?umask=0777'
 # bind 'ssl://127.0.0.1:9292?key=path_to_key&cert=path_to_cert'
 
