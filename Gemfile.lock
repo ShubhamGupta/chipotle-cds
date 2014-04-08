@@ -19,6 +19,11 @@ GEM
       activesupport (= 4.0.3)
       arel (~> 4.0.0)
     activerecord-deprecated_finders (1.0.3)
+    activerecord-jdbc-adapter (1.3.6)
+      activerecord (>= 2.2)
+    activerecord-jdbcpostgresql-adapter (1.3.6)
+      activerecord-jdbc-adapter (~> 1.3.6)
+      jdbc-postgres (>= 9.1)
     activesupport (4.0.3)
       i18n (~> 0.6, >= 0.6.4)
       minitest (~> 4.2)
@@ -27,6 +32,7 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.2)
     atomic (1.1.16)
+    atomic (1.1.16-java)
     builder (3.1.4)
     capistrano (3.1.0)
       i18n
@@ -49,11 +55,12 @@ GEM
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
+    jdbc-postgres (9.3.1101)
     jquery-rails (3.1.0)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.1)
-    kgio (2.9.2)
+    json (1.8.1-java)
     libv8 (3.16.14.3)
     mail (2.5.4)
       mime-types (~> 1.16)
@@ -65,8 +72,11 @@ GEM
       net-ssh (>= 2.6.5)
     net-ssh (2.8.0)
     non-stupid-digest-assets (1.0.4)
-    pg (0.17.1)
     polyglot (0.3.4)
+    puma (2.8.1)
+      rack (>= 1.1, < 2.0)
+    puma (2.8.1-java)
+      rack (>= 1.1, < 2.0)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -83,7 +93,6 @@ GEM
       activesupport (= 4.0.3)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
-    raindrops (0.13.0)
     rake (10.1.1)
     rdoc (4.1.1)
       json (~> 1.4)
@@ -118,6 +127,8 @@ GEM
     thor (0.18.1)
     thread_safe (0.3.1)
       atomic (>= 1.1.7, < 2)
+    thread_safe (0.3.1-java)
+      atomic (>= 1.1.7, < 2)
     tilt (1.4.1)
     tins (1.0.0)
     treetop (1.4.15)
@@ -127,29 +138,23 @@ GEM
     uglifier (2.5.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
-    unicorn (4.8.2)
-      kgio (~> 2.6)
-      rack
-      raindrops (~> 0.7)
-    unicorn-worker-killer (0.4.2)
-      unicorn (~> 4)
 
 PLATFORMS
+  java
   ruby
 
 DEPENDENCIES
+  activerecord-jdbcpostgresql-adapter
   capistrano
   capistrano-rvm
   coffee-rails (~> 4.0.0)
   jbuilder (~> 1.2)
   jquery-rails
   non-stupid-digest-assets (~> 1.0.4)
-  pg
+  puma
   rails (= 4.0.3)
   sass-rails (~> 4.0.0)
   sdoc
   therubyracer
   thread_safe (~> 0.3.1)
   uglifier (>= 1.3.0)
-  unicorn
-  unicorn-worker-killer

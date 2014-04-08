@@ -1,10 +1,12 @@
 source 'https://rubygems.org'
 
+ruby '1.9.3', :engine => 'jruby', :engine_version => '1.7.4'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'
 
 # Use postgresql as the database for Active Record
-gem 'pg'
+gem 'activerecord-jdbcpostgresql-adapter'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -27,8 +29,7 @@ gem 'thread_safe', '~> 0.3.1'
 gem 'jbuilder', '~> 1.2'
 gem 'non-stupid-digest-assets', '~> 1.0.4'
 
-gem 'unicorn'
-gem 'unicorn-worker-killer'
+gem 'puma'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
