@@ -59,12 +59,6 @@ namespace :deploy do
     end
   end
 
-  task :setup_config do
-    on roles(:app) do
-      execute "ln -nfs #{current_path}/config/unicorn_init.sh /var/www/chipotle/shared/unicorn_chipotle"
-    end
-  end
-  before "deploy", "deploy:setup_config"
 
   task :app_setup do
     on roles(:app) do
@@ -74,15 +68,6 @@ namespace :deploy do
         execute :bundle, :exec, :rake, 'db:migrate'
         execute :bundle, :exec, :rake, "assets:precompile"
         # end
-      end
-    end
-  end
-
-  %w[start stop restart].each do |command|
-    desc "#{command} unicorn server"
-    task command do
-      on roles(:app) do
-        execute "/var/www/chipotle/shared/unicorn_chipotle/unicorn_init.sh #{command}"
       end
     end
   end

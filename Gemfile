@@ -27,8 +27,7 @@ gem 'thread_safe', '~> 0.3.1'
 gem 'jbuilder', '~> 1.2'
 gem 'non-stupid-digest-assets', '~> 1.0.4'
 
-gem 'unicorn'
-gem 'unicorn-worker-killer'
+gem 'passenger'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
