@@ -4,7 +4,11 @@ class PagesController < ApplicationController
   # GET /pages
   # GET /pages.json
   def index
-    @pages = Page.all
+    page_ids = $redis.lrange('page_ids', 0, -1)
+    @pages = []
+    page_ids.each do |page_id|
+      @pages << Page.new($redis.hgetall("page:#{ page_id }"))
+    end
   end
 
   # GET /pages/1
@@ -65,7 +69,7 @@ class PagesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_page
-      @page = Page.find(params[:id])
+      @page = Page.new($redis.hgetall("page:#{ params[:id]}"))
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
