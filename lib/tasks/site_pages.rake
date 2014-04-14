@@ -15,4 +15,14 @@ namespace :site_pages do
     end
   end
 
+  desc 'Store pages to redis'
+
+  task :redis_store => :environment do
+    Page.all.each do |page|
+        $redis.hmset("page:#{ page.id }", 'id', page.id, 'name', page.name, 'content', page.content, 'site_id', page.site_id, 'created_at', page.created_at, 'updated_at', page.updated_at)
+        $redis.lpush('page_ids', page.id)
+        puts "Add to redis page: #{ page.name } with key: page:#{ page.id }"
+      end
+  end
+
 end
