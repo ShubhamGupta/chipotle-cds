@@ -6,6 +6,7 @@ gem 'rails', '4.0.3'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
+gem 'redis'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -20,6 +21,7 @@ gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'debugger'
 
 gem 'thread_safe', '~> 0.3.1'
 
